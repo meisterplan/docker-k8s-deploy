@@ -8,7 +8,8 @@ ENV AWS_CLI_VERSION=1.18.39
 RUN pip3 install awscli==${AWS_CLI_VERSION} --upgrade
 
 # Install aws-iam-authenticator for k8s
-RUN curl -Lo /usr/bin/aws-iam-authenticator https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v0.5.0/aws-iam-authenticator_0.5.0_linux_amd64 && \
+ENV AWS_IAM_AUTH_VERSION=v0.5.0
+RUN curl -Lo /usr/bin/aws-iam-authenticator https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/${AWS_IAM_AUTH_VERSION}/aws-iam-authenticator_0.5.0_linux_amd64 && \
     chmod +x /usr/bin/aws-iam-authenticator
 
 # Install kubectl
