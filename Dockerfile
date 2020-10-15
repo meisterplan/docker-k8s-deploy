@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM alpine:3.12
 
 # Install common cli tools
 RUN apk add --no-cache curl python3 jq make grep
@@ -13,7 +13,7 @@ RUN curl -Lo /usr/bin/aws-iam-authenticator https://github.com/kubernetes-sigs/a
     chmod +x /usr/bin/aws-iam-authenticator
 
 # Install kubectl
-ENV KUBECTL_VERSION=1.16.7
+ENV KUBECTL_VERSION=1.18.9
 RUN curl -Lo /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl && \
     chmod +x /usr/bin/kubectl
 
