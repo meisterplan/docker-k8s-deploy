@@ -1,7 +1,7 @@
 FROM alpine:3.12
 
 # Install common cli tools
-RUN apk add --no-cache curl python3 jq make grep
+RUN apk add --no-cache curl py3-pip jq make grep
 
 # Install AWS CLI v1
 ENV AWS_CLI_VERSION=1.18.39
