@@ -13,7 +13,7 @@ RUN curl -Lo /usr/bin/aws-iam-authenticator https://github.com/kubernetes-sigs/a
     chmod +x /usr/bin/aws-iam-authenticator
 
 # Install kubectl
-ENV KUBECTL_VERSION=1.21.9
+ENV KUBECTL_VERSION=1.22.6
 RUN curl -Lo /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl && \
     chmod +x /usr/bin/kubectl
 
