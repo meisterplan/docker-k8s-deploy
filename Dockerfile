@@ -1,11 +1,7 @@
-FROM alpine:3.12
+FROM amazon/aws-cli:2.7.2
 
 # Install common cli tools
-RUN apk add --no-cache curl py3-pip jq make grep git
-
-# Install AWS CLI v1
-ENV AWS_CLI_VERSION=1.18.39
-RUN pip3 install awscli==${AWS_CLI_VERSION} --upgrade
+RUN yum install -y curl jq make grep git tar && yum clean all && rm -rf /var/cache/yum
 
 # Install aws-iam-authenticator for k8s
 ENV AWS_IAM_AUTH_VERSION=0.5.0

@@ -1,6 +1,6 @@
 # k8s-deploy Docker Image
 
-A docker image that bundles common dependencies required for kubernetes deployments
+A docker image that bundles common dependencies required for Kubernetes deployments
 
 You can find the Docker image on DockerHub [here](https://hub.docker.com/repository/docker/meisterplan/k8s-deploy).
 
