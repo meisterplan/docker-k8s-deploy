@@ -1,7 +1,10 @@
 FROM amazon/aws-cli:2.7.2
 
 # Install common cli tools
-RUN yum install -y curl jq make grep git tar && yum clean all && rm -rf /var/cache/yum
+RUN yum install -y curl make grep git tar && yum clean all && rm -rf /var/cache/yum
+
+# Install latest jq version
+RUN curl -Lo /usr/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && chmod +x /usr/bin/jq
 
 # Install aws-iam-authenticator for k8s
 ENV AWS_IAM_AUTH_VERSION=0.5.0
@@ -20,3 +23,5 @@ RUN cd /tmp && \
     tar xvfz helm.tgz && \
     mv linux-amd64/helm /usr/bin/helm && \
     rm -rf /tmp/*
+
+ENTRYPOINT /bin/bash
