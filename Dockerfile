@@ -12,12 +12,12 @@ RUN curl -Lo /usr/bin/aws-iam-authenticator https://github.com/kubernetes-sigs/a
     chmod +x /usr/bin/aws-iam-authenticator
 
 # Install kubectl
-ENV KUBECTL_VERSION=1.22.6
+ENV KUBECTL_VERSION=1.23.16
 RUN curl -Lo /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl && \
     chmod +x /usr/bin/kubectl
 
 # Install helm
-ENV HELM_VERSION=3.4.1
+ENV HELM_VERSION=3.10.3
 RUN cd /tmp && \
     curl -Lo helm.tgz https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.tar.gz && \
     tar xvfz helm.tgz && \
