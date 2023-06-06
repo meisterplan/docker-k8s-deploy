@@ -3,8 +3,10 @@ FROM amazon/aws-cli:2.7.2
 # Install common cli tools
 RUN yum install -y curl make grep git tar && yum clean all && rm -rf /var/cache/yum
 
-# Install latest jq version
+# Install latest jq & yq version
 RUN curl -Lo /usr/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && chmod +x /usr/bin/jq
+RUN curl -Lo /usr/bin/yq https://github.com/mikefarah/yq/releases/download/v4.34.1/yq_linux_amd64 && chmod +x /usr/bin/yq
+
 
 # Install aws-iam-authenticator for k8s
 ENV AWS_IAM_AUTH_VERSION=0.5.0
