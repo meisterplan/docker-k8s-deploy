@@ -1,7 +1,7 @@
 FROM amazon/aws-cli:2.7.2
 
 # Install common cli tools
-RUN yum install -y curl make grep git tar && yum clean all && rm -rf /var/cache/yum
+RUN yum install -y curl make grep git tar zsh && yum clean all && rm -rf /var/cache/yum
 
 # Install latest jq & yq version
 RUN curl -Lo /usr/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && chmod +x /usr/bin/jq
